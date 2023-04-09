@@ -12,11 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+public class Product extends BaseEntity {
 
     private String name;
     private BigDecimal price;
@@ -24,9 +20,9 @@ public class Product {
     private Integer remainingQuantity;
 
     @ManyToMany
-    @JoinTable(name = "productCategoryRel",
-    joinColumns = @JoinColumn(name = "p_id"),
-    inverseJoinColumns = @JoinColumn(name = "c_id"))
+    @JoinTable(name = "product_category_rel",
+                joinColumns = @JoinColumn(name = "p_id"),
+                inverseJoinColumns = @JoinColumn(name = "c_id"))
     private List<Category> category;
 
 

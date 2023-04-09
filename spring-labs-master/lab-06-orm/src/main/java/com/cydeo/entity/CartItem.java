@@ -11,11 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "cart_item")
-public class CartItem {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+public class CartItem extends BaseEntity {
 
     private Integer quantity;
 
